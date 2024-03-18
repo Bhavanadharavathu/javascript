@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(184, 209, 234);
+            color:black;
+            overflow-x:hidden;
+        }
+    
+        .abc{
+            margin-left:400px;
+            width:600px;
+            font-size:40px;
+            margin-top:60px;
+            color:rgb(24, 40, 73);
+            text-shadow:2px 2px lightgray;
+        }
+        .def{
+            padding:10px;
+            width:200px;
+            margin-top:30px;
+            margin-left:50px;
+            border-radius:8px;
+            border:2px solid lightgrey;
+
+        }
+        .cal{
+            margin-left:90px;
+            margin-top:40px;
+            font-size:15px;
+            padding:10px;
+            width:150px;
+            font-weight:10px;
+            border-radius:8px;
+            background-color:dodgerblue;
+            color:white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .bs{
+            background-image:url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg');
+            background-repeat:no-repeat;
+            background-size:750px;
+            margin-top:40px;
+            margin-left :450px;
+            
+        }
+        div{
+            border:3px solid grey;
+            width:350px;
+            height:450px;
+            padding:20px;
+            margin-top:10px;
+            margin-left:-450px;
+            box-shadow:2px 2px 2px 2px grey;
+            border-radius:5px;
+        
+        }
+        .sb{
+            font-size:25px;
+            margin-left:10px;
+            margin-top:10px;
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1 class="abc">Fixed Deposit Calculator</h1><br>
+   
+    </header>
+    <h1 class="bs"></h1>
+    <div>
+       
+        <input type="name" placeholder="enter username" id="username" class="def">
+        <br>
+        <input type="age" placeholder="enter age" id="age" class="def">
+        <br>
+        <input type="amount" placeholder="enter amount" id="amount" class="def">
+        <br>
+        <input type="tenure" placeholder="enter tenure" id="tenure" class="def">
+        <button class="cal" type="submit" onclick="checkcal()"><b>CALCULATOR</b></button>
+        <h5 id="res"></h5>
+    </div>
+    </h1>
+    <script>
+        function checkcal()
+        {
+            var uname,age,amount,tenure;
+            uname=document.getElementById("username").value;
+            age=document.getElementById("age").value;
+            amount=document.getElementById("amount").value;
+            tenure=document.getElementById("tenure").value;
+            if(age>60)
+            {
+                var interest=parseInt((amount*tenure*8)/100)
+                document.getElementById("res").innerHTML=(uname+" maturity amount is"+(interest+parseInt(amount)))
+            }
+            else{
+                var interest=parseInt((amount*tenure*6)/100)
+                gst=(0.5/100)*interest
+                interest=interest-gst
+                document.getElementById("res").innerHTML=(uname+" maturity amount is"+(interest+parseInt(amount)))
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

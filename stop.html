@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="watch"></h1><br>
+    <button onclick="startTimer()">start</button>
+    <script>
+        var sec=0;
+        var min=0;
+        var hour=0;
+        function startTimer(){
+           setInterval(callTime,1000);
+        }
+        function callTime()
+        {
+            sec++;
+            if(sec==60)
+            {
+                sec=0;
+                min++;
+            }
+            if(min==60)
+            {
+                min=0;
+                hour++;
+            }
+            document.getElementById("watch").innerHTML=(hour.toString().padStart(2,'0')+":"+min.toString().padStart(2,'0')+":"+sec.toString().padStart(2,'0'));
+
+        }
+    </script>
+</body>
+</html>
